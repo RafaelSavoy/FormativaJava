@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script>
+        var cont = 0;
+        function loopSlider() {
+            var xx = setInterval(function () {
+                switch (cont) {
+                    case 0: {
+                        $("#slider-1").fadeOut(400);
+                        $("#slider-2").delay(400).fadeIn(400);
+                        $("#sButton1").removeClass("bg-purple-800");
+                        $("#sButton2").addClass("bg-purple-800");
+                        cont = 1;
+                        break;
+                    }
+                    case 1:
+                        {
+                            $("#slider-2").fadeOut(400);
+                            $("#slider-1").delay(400).fadeIn(400);
+                            $("#sButton2").removeClass("bg-purple-800");
+                            $("#sButton1").addClass("bg-purple-800");
+                            cont = 0;
+                            break;
+                        }
+                }
+            }, 8000);
+        }
+        function reinitLoop(time) {
+            clearInterval(xx);
+            setTimeout(loopSlider(), time);
+        }
+        function sliderButton1() {
+
+            $("#slider-2").fadeOut(400);
+            $("#slider-1").delay(400).fadeIn(400);
+            $("#sButton2").removeClass("bg-purple-800");
+            $("#sButton1").addClass("bg-purple-800");
+            reinitLoop(4000);
+            cont = 0
+
+        }
+
+        function sliderButton2() {
+            $("#slider-1").fadeOut(400);
+            $("#slider-2").delay(400).fadeIn(400);
+            $("#sButton1").removeClass("bg-purple-800");
+            $("#sButton2").addClass("bg-purple-800");
+            reinitLoop(4000);
+            cont = 1
+
+        }
+        $(window).ready(function () {
+            $("#slider-2").hide();
+            $("#sButton1").addClass("bg-purple-800");
+
+            loopSlider();
+        });
+    </script>
+
+</head>
+
+<body>
+    <header class="w-full bg-cover bg-center bg-black" style="height:32rem; background-image: url(img/banner_r6.jpg);">
+        <div class="bg-gray-900 bg-opacity-50 h-full ">
+            <nav class="backdrop-blur-sm p-1 border-b-2">
+                <div class="flex justify-around my-1">
+                    <a href="#" class="text-white font-sans md:text-3xl ">Gamer
+                        Place</a>
+                    <div class="hidden -mx-4 md:flex md:items-center">
+                        <a href="#" class="block mx-4 mt-2 md:mt-0 text-base text-white uppercase">Rolando
+                            agora</a>
+                        <a href="#" class="block mx-4 mt-2 md:mt-0 text-base text-white uppercase">Mais
+                            aguardados</a>
+                        <a href="#" class="block mx-4 mt-2 md:mt-0 text-base text-white uppercase">Comunidade</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="flex w-full justify-center items-center flex-col" style="height: 28rem;">
+                <h1 class="text-white text-4xl">O Lugar do <span class="underline text-cyan-400">SEU</span> Evento Gamer
+                </h1>
+                <button class="bg-cyan-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5">Ver
+                    eventos</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto mx-auto max-w-7xl mb-5">
+        <section class="w-full mx-auto p-2">
+            <h1 class="text-4xl text-center my-20">Por que ir com a gente?</h1>
+            <div class="flex w-full gap-5 md:gap-10 justify-between text-center">
+                <div class="max-w-sm rounded overflow-hidden shadow-inner border b-5">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">MOTIVO 1</div>
+                        <p class="text-gray-700 text-base">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sapiente quisquam saepe
+                            non maxime eum, minima placeat blanditiis itaque veritatis laudantium officia repellat, esse
+                            eaque possimus ex consequuntur quaerat deserunt.
+                        </p>
+                    </div>
+                </div>
+                <div class="max-w-sm rounded overflow-hidden shadow-inner border b-5">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">MOTIVO 2</div>
+                        <p class="text-gray-700 text-base">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sapiente quisquam saepe
+                            non maxime eum, minima placeat blanditiis itaque veritatis laudantium officia repellat, esse
+                            eaque possimus ex consequuntur quaerat deserunt.
+                        </p>
+                    </div>
+                </div>
+                <div class="max-w-sm rounded overflow-hidden shadow-inner border b-5">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">MOTIVO 3</div>
+                        <p class="text-gray-700 text-base">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sapiente quisquam saepe
+                            non maxime eum, minima placeat blanditiis itaque veritatis laudantium officia repellat, esse
+                            eaque possimus ex consequuntur quaerat deserunt.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-full">
+            <h1 class="text-4xl text-center my-20">Não sabe como ir?</h1>
+            <div class="flex w-full gap-10 justify-between text-center">
+                <div class="w-full rounded overflow-hidden shadow-inner border b-5">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2 flex justify-center gap-2 items-center">
+                            Viaje com as nossas parceiras<svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+
+                        <p class="text-gray-700 text-base">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sapiente quisquam saepe
+                            non maxime eum, minima placeat blanditiis itaque veritatis laudantium officia repellat, esse
+                            eaque possimus ex consequuntur quaerat deserunt.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-full">
+            <h1 class="text-4xl text-center my-20">Os mais aguardados</h1>
+            <div class="sliderAx h-auto">
+                <div id="slider-1" class="container mx-auto">
+                    <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill"
+                        style="background-image: url(img/ccxp\ banner.jpg)">
+                        <div class="md:w-1/2 ">
+                            <p class="text-3xl font-bold">CCXP</p>
+                            <p class="text-2xl mb-10 leading-none">Mais de 3 mil pessoas pela Gamer Place</p>
+                            <a href="#"
+                                class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact
+                                us</a>
+                        </div>
+                    </div> <!-- container -->
+                    <br>
+                </div>
+
+                <div id="slider-2" class="container mx-auto">
+                    <div class="bg-cover bg-top  h-auto text-white py-24 px-10 object-fill "
+                        style="background-image: url(img/bgs.jpg)">
+                        <div class="float-right">
+                            <p class="text-3xl font-bold">BGS</p>
+                            <p class="text-2xl mb-10 leading-none">Carousel with TailwindCSS and jQuery</p>
+                            <a href="#"
+                                class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact
+                                us</a>
+                        </div>
+
+                    </div> <!-- container -->
+                    <br>
+                </div>
+            </div>
+            <div class="flex justify-between w-12 mx-auto pb-2">
+                <button id="sButton1" onclick="sliderButton1()" class="bg-purple-400 rounded-full w-4 pb-2 "></button>
+                <button id="sButton2" onclick="sliderButton2() " class="bg-purple-400 rounded-full w-4 p-2"></button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
