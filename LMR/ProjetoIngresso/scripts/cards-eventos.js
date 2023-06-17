@@ -9,7 +9,7 @@ const card = `
         </p>
         <div class="flex justify-between items-center  mt-5">
             <span class="font-bold text-lg">12/11 - 22h</span>
-            <a href="./evento.html"class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">Garantir Vaga</a>
+            <a href="./checkout.html"class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">Garantir Vaga</a>
 
         </div>
         

@@ -1,5 +1,3 @@
-
-
 const header = ` 
 <header class="w-full bg-cover bg-center backdrop-blur-sm fixed sticky top-0 z-30 w-full">
     <div class="bg-gray-900 bg-opacity-50 h-full ">
@@ -10,12 +8,12 @@ const header = `
                 <div class="hidden -mx-4 md:flex md:items-center">
                     <a href="./index.html" class="block mx-4 mt-2 md:mt-0 text-base text-white uppercase">Home
                     </a>
-                    <a href="#" class="block mx-4 mt-2 md:mt-0 text-base text-white uppercase">Meus ingressos</a>
-                    <a href="#" class="block mx-4 mt-2 md:mt-0 text-base text-white uppercase">Entrar</a>
+                    <a href="#" class="block mx-4 mt-2 md:mt-0 text-base text-white uppercase">Eventos</a>
+                    <a href="./login.html" class="block mx-4 mt-2 md:mt-0 text-base text-white uppercase">Entrar</a>
                 </div>
             </div>
         </nav>
     </div>
-</header>`
+</header>`;
 
-document.getElementById('header').innerHTML += header
+document.getElementById("header").innerHTML += header;

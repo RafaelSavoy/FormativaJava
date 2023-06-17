@@ -1,222 +1,288 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <script src="scripts/footer.js" defer></script>
 
-
     <script>
-        var cont = 0;
-        function loopSlider() {
-            var xx = setInterval(function () {
-                switch (cont) {
-                    case 0: {
-                        $("#slider-1").fadeOut(400);
-                        $("#slider-2").delay(400).fadeIn(400);
-                        $("#sButton1").removeClass("bg-purple-800");
-                        $("#sButton2").addClass("bg-purple-800");
-                        cont = 1;
-                        break;
-                    }
-                    case 1:
-                        {
-                            $("#slider-2").fadeOut(400);
-                            $("#slider-1").delay(400).fadeIn(400);
-                            $("#sButton2").removeClass("bg-purple-800");
-                            $("#sButton1").addClass("bg-purple-800");
-                            cont = 0;
-                            break;
-                        }
-                }
-            }, 8000);
-        }
-        function reinitLoop(time) {
-            clearInterval(xx);
-            setTimeout(loopSlider(), time);
-        }
-        function sliderButton1() {
+      var cont = 0;
+      function loopSlider() {
+        var xx = setInterval(function () {
+          switch (cont) {
+            case 0: {
+              $("#slider-1").fadeOut(400);
+              $("#slider-2").delay(400).fadeIn(400);
+              $("#sButton1").removeClass("bg-purple-800");
+              $("#sButton2").addClass("bg-purple-800");
+              cont = 1;
+              break;
+            }
+            case 1: {
+              $("#slider-2").fadeOut(400);
+              $("#slider-1").delay(400).fadeIn(400);
+              $("#sButton2").removeClass("bg-purple-800");
+              $("#sButton1").addClass("bg-purple-800");
+              cont = 0;
+              break;
+            }
+          }
+        }, 8000);
+      }
+      function reinitLoop(time) {
+        clearInterval(xx);
+        setTimeout(loopSlider(), time);
+      }
+      function sliderButton1() {
+        $("#slider-2").fadeOut(400);
+        $("#slider-1").delay(400).fadeIn(400);
+        $("#sButton2").removeClass("bg-purple-800");
+        $("#sButton1").addClass("bg-purple-800");
+        reinitLoop(4000);
+        cont = 0;
+      }
 
-            $("#slider-2").fadeOut(400);
-            $("#slider-1").delay(400).fadeIn(400);
-            $("#sButton2").removeClass("bg-purple-800");
-            $("#sButton1").addClass("bg-purple-800");
-            reinitLoop(4000);
-            cont = 0
+      function sliderButton2() {
+        $("#slider-1").fadeOut(400);
+        $("#slider-2").delay(400).fadeIn(400);
+        $("#sButton1").removeClass("bg-purple-800");
+        $("#sButton2").addClass("bg-purple-800");
+        reinitLoop(4000);
+        cont = 1;
+      }
+      $(window).ready(function () {
+        $("#slider-2").hide();
+        $("#sButton1").addClass("bg-purple-800");
 
-        }
-
-        function sliderButton2() {
-            $("#slider-1").fadeOut(400);
-            $("#slider-2").delay(400).fadeIn(400);
-            $("#sButton1").removeClass("bg-purple-800");
-            $("#sButton2").addClass("bg-purple-800");
-            reinitLoop(4000);
-            cont = 1
-
-        }
-        $(window).ready(function () {
-            $("#slider-2").hide();
-            $("#sButton1").addClass("bg-purple-800");
-
-            loopSlider();
-        });
+        loopSlider();
+      });
     </script>
+  </head>
 
-</head>
-
-<body>
-    <header class="w-full bg-cover bg-center bg-black" style="height:80vh; background-image: url(img/banner_r6.jpg);">
-        <div class="bg-gray-900 bg-opacity-50 h-full ">
-            <nav class="backdrop-blur-sm p-1 border-b-2">
-                <div class="flex justify-around my-1">
-                    <a href="#" class="text-white font-sans text-2xl md:text-3xl ">Gamer
-                        Place</a>
-                    <div class="hidden -mx-4 md:flex md:items-center">
-                        <a href="./index.html" class="block mx-4 mt-2 md:mt-0 text-base text-white uppercase">HOME
-                        </a>
-                        <a href="#" class="block mx-4 mt-2 md:mt-0 text-base text-white uppercase"></a>
-                        <a href="#" class="block mx-4 mt-2 md:mt-0 text-base text-white uppercase">Comunidade</a>
-                    </div>
-                </div>
-            </nav>
-            <div class="flex w-full justify-center items-center flex-col" style="height:70vh;">
-                <h1 class="text-white text-3xl lg:text-4xl">O Lugar do <span class="underline text-cyan-400">SEU</span>
-                    Evento Gamer
-                </h1>
-                <a class="bg-cyan-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5"
-                    href="./eventos.html">Ver
-                    eventos</a>
+  <body>
+    <header
+      class="w-full bg-cover bg-center bg-black"
+      style="height: 80vh; background-image: url(img/banner_r6.webp)"
+    >
+      <div class="bg-gray-900 bg-opacity-50 h-full">
+        <nav class="backdrop-blur-sm p-1 border-b-2">
+          <div class="flex justify-around my-1">
+            <a href="#" class="text-white font-sans text-2xl md:text-3xl"
+              >Gamer Place</a
+            >
+            <div class="hidden -mx-4 md:flex md:items-center">
+              <a
+                href="./index.html"
+                class="block mx-4 mt-2 md:mt-0 text-base text-white uppercase"
+                >HOME
+              </a>
+              <a
+                href="./eventos.html"
+                class="block mx-4 mt-2 md:mt-0 text-base text-white uppercase"
+                >Eventos</a
+              >
+              <a
+                href="./login.html"
+                class="block mx-4 mt-2 md:mt-0 text-base text-white uppercase"
+                >Entrar</a
+              >
             </div>
+          </div>
+        </nav>
+        <div
+          class="flex w-full justify-center items-center flex-col"
+          style="height: 70vh"
+        >
+          <h1 class="text-white text-3xl lg:text-4xl">
+            O Lugar do <span class="underline text-cyan-400">SEU</span>
+            Evento Gamer
+          </h1>
+          <a
+            class="bg-cyan-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5"
+            href="./eventos.html"
+            >Ver eventos</a
+          >
         </div>
+      </div>
     </header>
 
     <main class="container mx-auto mx-auto max-w-7xl mb-5">
-        <section class="w-full mx-auto p-2">
-            <h1 class="text-4xl text-center my-20">Por que ir com a gente?</h1>
-            <div class="flex flex-col md:flex-row w-full items-center gap-5 md:gap-10 justify-between text-center">
-                <div class="w-full md:max-w-sm rounded overflow-hidden shadow-inner border b-5">
-                    <div class="px-6 py-4">
-                        <div class="font-bold text-xl mb-2">MOTIVO 1</div>
-                        <p class="text-gray-700 text-base">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sapiente quisquam saepe
-                            non maxime eum, minima placeat blanditiis itaque veritatis laudantium officia repellat, esse
-                            eaque possimus ex consequuntur quaerat deserunt.
-                        </p>
-                    </div>
-                </div>
-                <div class="w-full md:max-w-sm rounded overflow-hidden shadow-inner border b-5">
-                    <div class="px-6 py-4">
-                        <div class="font-bold text-xl mb-2">MOTIVO 2</div>
-                        <p class="text-gray-700 text-base">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sapiente quisquam saepe
-                            non maxime eum, minima placeat blanditiis itaque veritatis laudantium officia repellat, esse
-                            eaque possimus ex consequuntur quaerat deserunt.
-                        </p>
-                    </div>
-                </div>
-                <div class="w-full md:max-w-sm rounded overflow-hidden shadow-inner border b-5">
-                    <div class="px-6 py-4">
-                        <div class="font-bold text-xl mb-2">MOTIVO 3</div>
-                        <p class="text-gray-700 text-base">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sapiente quisquam saepe
-                            non maxime eum, minima placeat blanditiis itaque veritatis laudantium officia repellat, esse
-                            eaque possimus ex consequuntur quaerat deserunt.
-                        </p>
-                    </div>
-                </div>
+      <section class="w-full mx-auto p-2">
+        <h1 class="text-4xl text-center my-20">Por que ir com a gente?</h1>
+        <div
+          class="flex flex-col md:flex-row w-full items-center gap-5 md:gap-10 justify-between text-center"
+        >
+          <div
+            class="w-full md:max-w-sm rounded overflow-hidden shadow-inner border b-5"
+          >
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">MOTIVO 1</div>
+              <p class="text-gray-700 text-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Adipisci sapiente quisquam saepe non maxime eum, minima placeat
+                blanditiis itaque veritatis laudantium officia repellat, esse
+                eaque possimus ex consequuntur quaerat deserunt.
+              </p>
             </div>
-        </section>
-        <section class="w-full">
-            <h1 class="text-4xl text-center my-20">Não sabe como ir?</h1>
-            <div
-                class="mx-5 gap-10 flex justify-around flex-col text-center min-h-[300px] h-auto rounded shadow-inner border b-5 px-6 py-10">
-                <div>
-                    <p class="font-bold text-xl mb-2 flex justify-center gap-2 items-center">
-                        Viaje com as nossas parceiras
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </span>
-                    </p>
-
-                    <p class="text-gray-700 text-base">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sapiente quisquam saepe
-                        non maxime eum, minima placeat blanditiis itaque veritatis laudantium officia repellat, esse
-                        eaque possimus ex consequuntur quaerat deserunt.
-                    </p>
-                </div>
-
-                <div class="flex md:flex-row flex-wrap justify-around gap-10">
-                    <img class="h-20" src="img/parceiras_logo/gol.png">
-                    <img class="h-20" src="img/parceiras_logo/gol.png">
-                    <img class="h-20" src="img/parceiras_logo/gol.png">
-                </div>
+          </div>
+          <div
+            class="w-full md:max-w-sm rounded overflow-hidden shadow-inner border b-5"
+          >
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">MOTIVO 2</div>
+              <p class="text-gray-700 text-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Adipisci sapiente quisquam saepe non maxime eum, minima placeat
+                blanditiis itaque veritatis laudantium officia repellat, esse
+                eaque possimus ex consequuntur quaerat deserunt.
+              </p>
             </div>
-        </section>
-        <section class="w-full">
-            <h1 class="text-4xl text-center my-20">Bombando</h1>
-            <div class="flex flex-col lg:grid lg:grid-cols-2 lg:gap-4 lg:items-center">
-                <div class="sliderAx h-auto ">
-                    <div id="slider-1" class="container mx-auto">
-                        <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill"
-                            style="background-image: url(https://images.unsplash.com/photo-1544427920-c49ccfb85579?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1422&q=80)">
-                            <div class="md:w-1/2">
-                                <p class="font-bold text-sm uppercase">Services</p>
-                                <p class="text-3xl font-bold">Hello world</p>
-                                <p class="text-2xl mb-10 leading-none">Carousel with TailwindCSS and jQuery</p>
-                                <a href="#"
-                                    class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact
-                                    us</a>
-                            </div>
-                        </div> <!-- container -->
-                        <br>
-                    </div>
-
-                    <div id="slider-2" class="container mx-auto">
-                        <div class="bg-cover bg-top  h-auto text-white py-24 px-10 object-fill"
-                            style="background-image: url(https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
-
-                            <p class="font-bold text-sm uppercase">Services</p>
-                            <p class="text-3xl font-bold">Hello world</p>
-                            <p class="text-2xl mb-10 leading-none">Carousel with TailwindCSS and jQuery</p>
-                            <a href="#"
-                                class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact
-                                us</a>
-
-                        </div> <!-- container -->
-                        <br>
-                    </div>
-                    <div class="flex justify-between w-12 mx-auto pb-2">
-                        <button id="sButton1" onclick="sliderButton1()"
-                            class="bg-purple-400 rounded-full w-4 pb-2 "></button>
-                        <button id="sButton2" onclick="sliderButton2() "
-                            class="bg-purple-400 rounded-full w-4 p-2"></button>
-                    </div>
-                </div>
-                <div class="flex justify-center items-center flex-col gap-5 p-10">
-                    <h1 class="text-2xl font-bold">Veja aqui os eventos que estão em alta</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi tempore, ducimus voluptatum ab
-                        possimus voluptates excepturi nulla corporis aperiam quaerat explicabo est dolorem, praesentium
-                        perspiciatis quas impedit minus? Placeat, sequi!</p>
-                    <a class="bg-cyan-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5"
-                        href="./eventos.html">Ver
-                        eventos</a>
-                </div>
+          </div>
+          <div
+            class="w-full md:max-w-sm rounded overflow-hidden shadow-inner border b-5"
+          >
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">MOTIVO 3</div>
+              <p class="text-gray-700 text-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Adipisci sapiente quisquam saepe non maxime eum, minima placeat
+                blanditiis itaque veritatis laudantium officia repellat, esse
+                eaque possimus ex consequuntur quaerat deserunt.
+              </p>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
+      <section class="w-full">
+        <h1 class="text-4xl text-center my-20">Não sabe como ir?</h1>
+        <div
+          class="mx-5 gap-10 flex justify-around flex-col text-center min-h-[300px] h-auto rounded shadow-inner border b-5 px-6 py-10"
+        >
+          <div>
+            <p
+              class="font-bold text-xl mb-2 flex justify-center gap-2 items-center"
+            >
+              Viaje com as nossas parceiras
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </span>
+            </p>
+
+            <p class="text-gray-700 text-base">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+              sapiente quisquam saepe non maxime eum, minima placeat blanditiis
+              itaque veritatis laudantium officia repellat, esse eaque possimus
+              ex consequuntur quaerat deserunt.
+            </p>
+          </div>
+
+          <div class="flex md:flex-row flex-wrap justify-around gap-10">
+            <img class="h-20" src="img/parceiras_logo/gol.png" />
+            <img class="h-20" src="img/parceiras_logo/gol.png" />
+            <img class="h-20" src="img/parceiras_logo/gol.png" />
+          </div>
+        </div>
+      </section>
+      <section class="w-full">
+        <h1 class="text-4xl text-center my-20">Bombando</h1>
+        <div
+          class="flex flex-col lg:grid lg:grid-cols-2 lg:gap-4 lg:items-center"
+        >
+          <div class="sliderAx h-auto">
+            <div id="slider-1" class="container mx-auto">
+              <div
+                class="bg-cover bg-center h-auto text-white py-24 px-10 object-fill"
+                style="
+                  background-image: url(https://images.unsplash.com/photo-1544427920-c49ccfb85579?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1422&q=80);
+                "
+              >
+                <div class="md:w-1/2">
+                  <p class="font-bold text-sm uppercase">Services</p>
+                  <p class="text-3xl font-bold">Hello world</p>
+                  <p class="text-2xl mb-10 leading-none">
+                    Carousel with TailwindCSS and jQuery
+                  </p>
+                  <a
+                    href="#"
+                    class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800"
+                    >Contact us</a
+                  >
+                </div>
+              </div>
+              <br />
+            </div>
+
+            <div id="slider-2" class="container mx-auto">
+              <div
+                class="bg-cover bg-top h-auto text-white py-24 px-10 object-fill"
+                style="
+                  background-image: url(https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+                "
+              >
+                <p class="font-bold text-sm uppercase">Services</p>
+                <p class="text-3xl font-bold">Hello world</p>
+                <p class="text-2xl mb-10 leading-none">
+                  Carousel with TailwindCSS and jQuery
+                </p>
+                <a
+                  href="#"
+                  class="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800"
+                  >Contact us</a
+                >
+              </div>
+              <br />
+            </div>
+            <div class="flex justify-between w-12 mx-auto pb-2">
+              <button
+                id="sButton1"
+                onclick="sliderButton1()"
+                class="bg-purple-400 rounded-full w-4 pb-2"
+              ></button>
+              <button
+                id="sButton2"
+                onclick="sliderButton2() "
+                class="bg-purple-400 rounded-full w-4 p-2"
+              ></button>
+            </div>
+          </div>
+          <div class="flex justify-center items-center flex-col gap-5 p-10">
+            <h1 class="text-2xl font-bold">
+              Veja aqui os eventos que estão em alta
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+              tempore, ducimus voluptatum ab possimus voluptates excepturi nulla
+              corporis aperiam quaerat explicabo est dolorem, praesentium
+              perspiciatis quas impedit minus? Placeat, sequi!
+            </p>
+            <a
+              class="bg-cyan-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5"
+              href="./eventos.html"
+              >Ver eventos</a
+            >
+          </div>
+        </div>
+      </section>
     </main>
     <div id="footer"></div>
-</body>
-
+  </body>
 </html>
