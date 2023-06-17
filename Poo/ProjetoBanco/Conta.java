@@ -1,48 +1,64 @@
 package ProjetoBanco;
 
+import javax.swing.JOptionPane;
+
 public class Conta {
-    String nome;
-    int numeroConta;
-    String tipoConta;
-    double saldo;
+    private String tipo;
+    private String nome;
+    private double saldo;
+    private int numeroConta;
+    private double saldoDevedor;
 
-    public Conta(String nome, int numeroConta, String tipoConta) {
-        this.nome = nome;
+    public Conta(int numeroConta, String tipo, String nome) {
         this.numeroConta = numeroConta;
-        this.tipoConta = tipoConta;
-        this.saldo = 0;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
+        this.tipo = tipo;
         this.nome = nome;
+        this.saldoDevedor = 0;
     }
 
     public int getNumeroConta() {
         return numeroConta;
     }
 
-    public void setNumeroConta(int numeroConta) {
-        this.numeroConta = numeroConta;
+    public String getTipo() {
+        return tipo;
     }
 
-    public String getTipoConta() {
-        return tipoConta;
-    }
-
-    public void setTipoConta(String tipoConta) {
-        this.tipoConta = tipoConta;
+    public String getNome() {
+        return nome;
     }
 
     public double getSaldo() {
-        return saldo;
+        return this.saldo;
     }
 
-    public void setSaldo(double saldo) {
+    private void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
+    public double getSaldoDevedor() {
+        return this.saldoDevedor;
+    }
+
+    public void setSaldoDevedor(double value) {
+        this.saldoDevedor = value;
+    }
+
+    public void sacar(double valor) {
+        if (valor > saldo) {
+            JOptionPane.showMessageDialog(null, "Você não pode sacar mais do que o seu saldo");
+        } else if (valor < 0) {
+            JOptionPane.showMessageDialog(null, "Você não pode sacar um valor negativo");
+        } else {
+            setSaldo(this.getSaldo() - valor);
+        }
+    }
+
+    public void depositar(double valor) {
+        if (valor < 0) {
+            JOptionPane.showMessageDialog(null, "Você não pode depositar um valor negativo");
+        } else {
+            setSaldo(this.getSaldo() + valor);
+        }
+    }
 }
